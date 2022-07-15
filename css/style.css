@@ -1,0 +1,214 @@
+/*reset*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+button{
+    outline: none;
+}
+
+/*scrollbar*/
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+html ::-webkit-scrollbar-button {
+    display: none;
+}
+
+html ::-webkit-scrollbar-thumb {
+    background-color: #cfcfcf;
+    border-radius: 20px;
+}
+
+html ::-webkit-scrollbar-track-piece {
+    background-color: #f0f0f0;
+    border-radius: 20px;
+}
+
+
+/*styles*/
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+button{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.main__content{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    opacity: 0.85;
+}
+
+.input{
+    position: absolute;
+    top: 20vh;
+    display: flex;
+    gap: 25px;
+    background-color: #cfcfcf;
+    padding: 15px 30px;
+    border-radius: 120px;
+}
+
+.input__type{
+    outline: none;
+    border: 0;
+    background-color: #cfcfcf;
+    font-size: 2em;
+}
+
+.input__btn{
+    position: relative;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 20px;
+    border: 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease;
+}
+
+.input__btn span{
+    position: relative;
+    z-index: 2;
+}
+
+.input__btn::after{
+    content: '';
+    position: absolute;
+    padding: 0;
+    animation-name: btn_animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    background-color: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+}
+
+.input__btn:hover{
+    background-color: white;
+    animation-iteration-count: unset;
+}
+
+@keyframes btn_animation{
+    0%{
+        padding: 0;
+    }
+    50%{
+        padding: 27.2px;
+    }
+    100%{
+        padding: 0;
+    }
+}
+
+.main__task{
+    position: absolute;
+    top: 30vh;
+    width: 525px;
+    max-height: 40vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 3px;
+    margin-top: 3px;
+}
+
+.block{
+    background-color: #f0f0f0;
+    display: flex;
+    padding: 15px 30px;
+    gap: 30px;
+    border-radius: 120px;
+    border: 1px solid #444;
+    align-items: center;
+}
+
+.check{
+    min-width: 18px;
+    height: 18px;
+    background: url(../img/check.svg) no-repeat center top / cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+/*#00B9B6*/
+
+.text{
+    max-width: 100%;
+    font-size: 1.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size .5s ease;
+}
+
+.check.done + .text{
+    background-size: 100% 1px;
+}
+
+.check.done{
+    background: url(../img/checkDone.svg) no-repeat center top / cover;
+    border-radius: 50%;
+}
+
+.border{
+    border: 1px solid green;
+}
+
+.delete{
+    width: 16px;
+    height: 16px;
+    background: url(../img/trash.png) no-repeat center top / cover;    
+    margin-left: auto;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.block:hover .delete{
+    visibility: visible;
+}
