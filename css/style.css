@@ -159,7 +159,7 @@ body {
     background-color: #f0f0f0;
     display: flex;
     padding: 15px 30px;
-    gap: 30px;
+    gap: 20px;
     border-radius: 120px;
     border: 1px solid #444;
     align-items: center;
@@ -175,7 +175,11 @@ body {
 /*#00B9B6*/
 
 .text{
-    max-width: 100%;
+    outline: none;
+    border: 0;
+    background-color: #f0f0f0;
+
+    width: 100%;
     font-size: 1.2rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -185,6 +189,8 @@ body {
     background-repeat: no-repeat;
     background-size: 0% 1px;
     transition: background-size .5s ease;
+
+    white-space: none;
 }
 
 .check.done + .text{
@@ -200,15 +206,30 @@ body {
     border: 1px solid green;
 }
 
-.delete{
-    width: 16px;
+.edit{
+    color: red;
+    font-size: 1.5em;
+    margin-left: auto;
+    cursor: pointer;
+    min-width: 16px;
     height: 16px;
-    background: url(../img/trash.png) no-repeat center top / cover;    
+    background: url(../img/edit.svg) no-repeat center top / cover;  
+
+    visibility: hidden;
+}
+
+.delete{
+    min-width: 13px;
+    height: 16px;
+    background: url(../img/trash.svg) no-repeat center top / cover;  
     margin-left: auto;
     cursor: pointer;
     visibility: hidden;
 }
 
 .block:hover .delete{
+    visibility: visible;
+}
+.block:hover .edit  {
     visibility: visible;
 }

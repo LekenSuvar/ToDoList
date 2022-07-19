@@ -2,6 +2,9 @@
     .delete{
         visibility: visible;
     }
+    .edit{
+        visibility: visible;
+    }
 }
 @media(max-width: 560px){
     .input__type{
