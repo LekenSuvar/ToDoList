@@ -217,6 +217,9 @@ body {
 
     visibility: hidden;
 }
+.process{
+    background: url(../img/confirm.svg) no-repeat center top / cover;  
+}
 
 .delete{
     min-width: 13px;
