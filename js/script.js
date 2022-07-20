@@ -1,6 +1,7 @@
 const type = document.querySelector('.input__type'),
     btn = document.querySelector('.input__btn'),
-    task = document.querySelector('.main__task')
+    task = document.querySelector('.main__task'),
+    main = document.querySelector('.main__content')
 
 btn.addEventListener('click', (event) => {
     event.preventDefault();
@@ -25,7 +26,7 @@ btn.addEventListener('click', (event) => {
 
     text.value = type.value
     text.type = 'text'
-    text.setAttribute('readonly', true)
+    text.setAttribute('readonly', 'readonly')
     check.classList.add('check')
     text.classList.add('text')
     edit.classList.add('edit')
